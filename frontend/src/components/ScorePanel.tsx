@@ -12,6 +12,7 @@ interface ScorePanelProps {
 
 const ScorePanel: React.FC<any> = (props: ScorePanelProps) => {
     let score = props.score;
+    let tsumoSplit = score ? score.tsumoSplit : undefined;
     console.log(score);
     return (
         <div className="rounded-lg ring ring-neutral-300 mx-4 bg-neutral-800 w-[404px] h-32 text-white text-sm px-3 py-2 font-medium">
@@ -62,10 +63,23 @@ const ScorePanel: React.FC<any> = (props: ScorePanelProps) => {
                                             ? (score.yakuList
                                                   ? `${score.han} Han ${score.fu} Fu `
                                                   : "") +
-                                              `${score.points} Points`
+                                              `${score.points} Points ${
+                                                  tsumoSplit
+                                                      ? tsumoSplit.length == 2
+                                                          ? `(${tsumoSplit[0]}/${tsumoSplit[1]})`
+                                                          : `(${tsumoSplit[0]} all)`
+                                                      : ""
+                                              }`
                                             : (score.yakuList
                                                   ? `${score.han}飜 ${score.fu}符 `
-                                                  : "") + `${score.points}点`}
+                                                  : "") +
+                                              `${score.points}点 ${
+                                                  tsumoSplit
+                                                      ? tsumoSplit.length == 2
+                                                          ? `(${tsumoSplit[0]}/${tsumoSplit[1]})`
+                                                          : `(${tsumoSplit[0]}オール)`
+                                                      : ""
+                                              }`}
                                     </p>
                                 </div>
                             </div>

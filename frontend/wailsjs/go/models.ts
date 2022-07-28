@@ -76,6 +76,7 @@ export namespace main {
 	    fu: number;
 	    points: number;
 	    scoreLevel: string;
+	    tsumoSplit: number[];
 	
 	    static createFrom(source: any = {}) {
 	        return new Score(source);
@@ -90,6 +91,7 @@ export namespace main {
 	        this.fu = source["fu"];
 	        this.points = source["points"];
 	        this.scoreLevel = source["scoreLevel"];
+	        this.tsumoSplit = source["tsumoSplit"];
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {

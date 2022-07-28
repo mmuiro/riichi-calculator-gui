@@ -27,6 +27,7 @@ type Score struct {
 	Fu                int       `json:"fu"`
 	Points            int       `json:"points"`
 	ScoreLevel        string    `json:"scoreLevel"`
+	TsumoSplit        []int     `json:"tsumoSplit"`
 }
 
 type Tile struct {
@@ -96,6 +97,7 @@ func (c *Calculator) CalculateScore(handString string, cond Conditions, l int) S
 		Han:               score.Han,
 		Fu:                score.Fu,
 		ScoreLevel:        score.ScoreLevelName(languages.Language(l)),
+		TsumoSplit:        score.TsumoSplit,
 	}
 }
 

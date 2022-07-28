@@ -627,7 +627,7 @@ const Calculator: React.FC<any> = () => {
             setShowScore(false);
             setScore(undefined);
         }
-    }, [conditions, tilePlaces, showScore]);
+    }, [conditions, tilePlaces, showScore, language]);
 
     useEffect(() => {
         if (score && !showScore) {
