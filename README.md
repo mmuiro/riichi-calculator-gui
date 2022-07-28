@@ -5,6 +5,8 @@ The main logic for calculating scores is implemented in my [`riichi-base`](https
 
 This calculator uses the [Mahjong Soul ruleset](https://riichi.wiki/Majsoul#Rules). Read more about it and Riichi Mahjong in general at [riichi.wiki](https://riichi.wiki/).
 
+Tile graphics are taken from [here](https://github.com/FluffyStuff/riichi-mahjong-tiles).
+
 ## Installation
 
 To install, you'll need to first install the [Wails CLI](https://wails.io/docs/gettingstarted/installation). Then, clone this repository, and run `wails build` in it. The executable will be in `build/bin`.
