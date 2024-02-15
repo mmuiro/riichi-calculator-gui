@@ -104,7 +104,7 @@ const parseDoraAndConditions = (
     parsedConds.bakaze = conds["roundWind"].selected + 3;
     parsedConds.jikaze = conds["seatWind"].selected + 3;
     parsedConds[
-        parsedConds.bakaze == parsedConds.jikaze ? "tenhou" : "chiihou"
+        parsedConds.jikze == 3 ? "tenhou" : "chiihou"
     ] = conds["blessings"].selected == 1;
     return new main.Conditions(parsedConds);
 };
@@ -447,7 +447,7 @@ const Calculator: React.FC<any> = () => {
                 language == 0 ? "River" : "河底";
         }
         conditions["blessings"].options[1] =
-            conditions["roundWind"].selected == conditions["seatWind"].selected
+            conditions["seatWind"].selected == 0
                 ? language == 0
                     ? "Heaven's"
                     : "天和"
